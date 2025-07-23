@@ -18,6 +18,7 @@ metadata/_edit_horizontal_guides_ = [-145.0, 159.0]
 tile_set = ExtResource("2_d4gvn")
 format = 2
 layer_0/name = "Background"
+layer_0/tile_data = PackedInt32Array(-1245137, 524288, 0, -1310673, 524288, 0, -1376209, 0, 2, -1441745, 524288, 1, -1179601, 0, 4, -1179600, 262144, 4, -1245136, 327680, 1, -1310672, 262144, 3, -1376208, 655360, 0, -1441744, 262144, 2, -1507281, 0, 0, -1507280, 262144, 0)
 layer_1/name = "Geometry"
 layer_1/enabled = true
 layer_1/modulate = Color(1, 1, 1, 1)
@@ -33,12 +34,12 @@ layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array()
 
-[node name="MineGate" parent="TileMap" instance=ExtResource("3_65km7")]
+[node name="TopGate" parent="TileMap" instance=ExtResource("3_65km7")]
 position = Vector2(753, -338)
-path = "res://scenes/forest.tscn"
-entry_point = "BottomEntry"
+path = "res://scenes/cave.tscn"
+entry_point = "BottomGate-Entry"
 
-[node name="MineGate2" parent="TileMap" instance=ExtResource("3_65km7")]
+[node name="BottomGate" parent="TileMap" instance=ExtResource("3_65km7")]
 position = Vector2(62, 79)
 scale = Vector2(-1, 1)
 path = "res://scenes/forest.tscn"
@@ -51,6 +52,7 @@ script = ExtResource("4_sdmpn")
 [node name="TopEntry" type="Marker2D" parent="TileMap"]
 position = Vector2(680, -297)
 script = ExtResource("4_sdmpn")
+direction = -1
 
 [node name="Player" parent="." instance=ExtResource("5_e0hny")]
 position = Vector2(166, 75)
