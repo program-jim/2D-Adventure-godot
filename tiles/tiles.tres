@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bl07q8du6fq3w"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bl07q8du6fq3w"]
 
 [ext_resource type="Texture2D" uid="uid://donx86vj426iw" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="1_2deda"]
+[ext_resource type="Texture2D" uid="uid://birku6xctxokl" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_cqy46"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6fwra"]
 texture = ExtResource("1_2deda")
@@ -449,6 +450,21 @@ texture = ExtResource("1_2deda")
 12:5/0/terrains_peering_bit/top_left_corner = 1
 12:5/0/terrains_peering_bit/top_right_corner = 1
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6mawu"]
+texture = ExtResource("2_cqy46")
+9:10/0 = 0
+9:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:10/0/physics_layer_0/angular_velocity = 0.0
+9:11/0 = 0
+9:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:11/0/physics_layer_0/angular_velocity = 0.0
+9:12/0 = 0
+9:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:12/0/physics_layer_0/angular_velocity = 0.0
+7:11/0 = 0
+7:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:11/0/physics_layer_0/angular_velocity = 0.0
+
 [resource]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 1
@@ -456,4 +472,7 @@ terrain_set_0/terrain_0/name = "Trunk"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 terrain_set_0/terrain_1/name = "Leaves"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
+terrain_set_0/terrain_2/name = "Rock"
+terrain_set_0/terrain_2/color = Color(0.46875, 0.5, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_6fwra")
+sources/1 = SubResource("TileSetAtlasSource_6mawu")
