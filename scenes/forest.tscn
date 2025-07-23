@@ -55,7 +55,7 @@ script = ExtResource("4_sdmpn")
 direction = -1
 
 [node name="Player" parent="." instance=ExtResource("5_e0hny")]
-position = Vector2(166, 75)
+position = Vector2(166, 124)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -14)
