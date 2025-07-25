@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/class/state_machine.gd" id="4_xd7rn"]
 [ext_resource type="Script" path="res://scripts/class/stats.gd" id="5_a04et"]
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 4
 script = ExtResource("1_22vtv")
 

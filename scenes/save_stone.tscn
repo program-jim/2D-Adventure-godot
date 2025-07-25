@@ -1,0 +1,172 @@
+[gd_scene load_steps=10 format=3 uid="uid://k2rrpy84oeny"]
+
+[ext_resource type="Script" path="res://scripts/class/interactable.gd" id="1_hyjvk"]
+[ext_resource type="Texture2D" uid="uid://dya322eek7usm" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="2_hb6e1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfn56"]
+size = Vector2(45, 35.5)
+
+[sub_resource type="Gradient" id="Gradient_l5k0t"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hi3sw"]
+gradient = SubResource("Gradient_l5k0t")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Animation" id="Animation_ua7ca"]
+resource_name = "ready"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Props-rocks2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(48, 288, 16, 16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_kw76s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Props-rocks2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(48, 288, 16, 16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_m7j48"]
+resource_name = "activated"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Props-rocks2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(192, 288, 16, 16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_behni"]
+_data = {
+"RESET": SubResource("Animation_kw76s"),
+"activated": SubResource("Animation_m7j48"),
+"ready": SubResource("Animation_ua7ca")
+}
+
+[node name="SaveStone" type="Area2D"]
+script = ExtResource("1_hyjvk")
+
+[node name="Props-rocks" type="Sprite2D" parent="."]
+position = Vector2(0, 137)
+texture = ExtResource("2_hb6e1")
+region_enabled = true
+region_rect = Rect2(6, 82, 56, 78)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 158.25)
+shape = SubResource("RectangleShape2D_xfn56")
+
+[node name="Props-rocks2" type="Sprite2D" parent="."]
+position = Vector2(0, 124)
+texture = ExtResource("2_hb6e1")
+region_enabled = true
+region_rect = Rect2(48, 288, 16, 16)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 122)
+enabled = false
+color = Color(0.0862745, 0.52549, 1, 1)
+texture = SubResource("GradientTexture2D_hi3sw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "ready"
+libraries = {
+"": SubResource("AnimationLibrary_behni")
+}
