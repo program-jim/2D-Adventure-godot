@@ -16,7 +16,7 @@ extends CanvasLayer
 #}
 var world_states := {}
 
-const SAVE_PATH := "user://player/data.sav"
+const SAVE_PATH := "user://data.sav"
 
 @onready var player_stats: Node = $PlayerStats
 @onready var color_rect: ColorRect = $ColorRect

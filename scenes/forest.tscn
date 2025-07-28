@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cu2nxoiqv7lvh"]
+[gd_scene load_steps=11 format=3 uid="uid://cu2nxoiqv7lvh"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_lj8kf"]
 [ext_resource type="TileSet" uid="uid://bl07q8du6fq3w" path="res://tiles/tiles.tres" id="2_d4gvn"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://buc7xf1fjjrbo" path="res://scenes/mine_gate.tscn" id="3_65km7"]
 [ext_resource type="Script" path="res://scripts/class/entry_point.gd" id="4_sdmpn"]
 [ext_resource type="PackedScene" uid="uid://7v84sq3ughq8" path="res://scenes/player.tscn" id="5_e0hny"]
+[ext_resource type="PackedScene" uid="uid://k2rrpy84oeny" path="res://scenes/save_stone.tscn" id="5_hukql"]
 [ext_resource type="Texture2D" uid="uid://cf5ovaipwh3ay" path="res://assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="6_8ttf4"]
 [ext_resource type="Texture2D" uid="uid://dy4lspade7mpm" path="res://assets/Legacy-Fantasy - High Forest 2.3/Trees/Background.png" id="7_6nccx"]
 [ext_resource type="PackedScene" uid="uid://dbugji2fynbsb" path="res://scenes/boar.tscn" id="8_1qcix"]
@@ -53,6 +54,9 @@ script = ExtResource("4_sdmpn")
 position = Vector2(680, -297)
 script = ExtResource("4_sdmpn")
 direction = -1
+
+[node name="SaveStone" parent="TileMap" instance=ExtResource("5_hukql")]
+position = Vector2(104, -176)
 
 [node name="Player" parent="." instance=ExtResource("5_e0hny")]
 position = Vector2(166, 124)
