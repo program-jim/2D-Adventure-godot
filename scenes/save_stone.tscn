@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://k2rrpy84oeny"]
 
-[ext_resource type="Script" path="res://scenes/save_stone.gd" id="1_altmm"]
+[ext_resource type="Script" path="res://scripts/save_stone.gd" id="1_e16dn"]
 [ext_resource type="Texture2D" uid="uid://dya322eek7usm" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="2_hb6e1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfn56"]
@@ -167,7 +167,7 @@ _data = {
 }
 
 [node name="SaveStone" type="Area2D"]
-script = ExtResource("1_altmm")
+script = ExtResource("1_e16dn")
 
 [node name="Props-rocks" type="Sprite2D" parent="."]
 position = Vector2(0, -21)
