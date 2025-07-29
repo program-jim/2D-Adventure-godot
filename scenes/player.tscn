@@ -2379,6 +2379,7 @@ position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_0qnlk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+deterministic = true
 libraries = {
 "": SubResource("AnimationLibrary_eumhp")
 }

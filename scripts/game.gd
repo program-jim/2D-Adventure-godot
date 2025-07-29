@@ -44,9 +44,9 @@ func change_scene(path: String, params := {}) -> void:
 	if "init" in params:
 		params.init.call()
 	
-	await tree.process_frame # before ENGINE VER 4.2
+	#await tree.process_frame # before ENGINE VER 4.2
 #	await tree.process_frame # before ENGINE VER 4.2
-#	await tree.tree_changed # since ENGINE VER 4.2
+	await tree.tree_changed # since ENGINE VER 4.2
 
 	var new_name := tree.current_scene.scene_file_path.get_file().get_basename()
 	if new_name in world_states:

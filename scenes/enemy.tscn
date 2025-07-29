@@ -29,6 +29,7 @@ script = ExtResource("3_hkab4")
 position = Vector2(0, -1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+deterministic = true
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("4_xd7rn")
