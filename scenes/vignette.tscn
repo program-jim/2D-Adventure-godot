@@ -1,8 +1,18 @@
-[gd_scene format=3 uid="uid://b2jbdlqf62jb8"]
+[gd_scene load_steps=3 format=3 uid="uid://b2jbdlqf62jb8"]
+
+[ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="1_by6df"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4el87"]
+shader = ExtResource("1_by6df")
+shader_parameter/alpha = 0.25
+shader_parameter/inner_radius = 0.8
+shader_parameter/outer_radius = 1.0
 
 [node name="Vignette" type="CanvasLayer"]
+layer = 10
 
 [node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_4el87")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

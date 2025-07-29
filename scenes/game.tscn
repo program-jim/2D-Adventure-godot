@@ -6,6 +6,7 @@
 [node name="Game" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_myq2f")
+is_pretty_json = true
 
 [node name="PlayerStats" type="Node" parent="."]
 script = ExtResource("2_k07ke")

@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/class/hitbox.gd" id="4_ni008"]
 [ext_resource type="Texture2D" uid="uid://nkn1dk57di5" path="res://assets/generic_char_v0.2/png/blue/char_blue_2.png" id="5_l0v7r"]
 [ext_resource type="Script" path="res://scripts/class/state_machine.gd" id="6_f2rj6"]
-[ext_resource type="PackedScene" uid="uid://c8ij1cub0j4l2" path="res://scenes/UI/status_panel.tscn" id="7_xa7h4"]
+[ext_resource type="PackedScene" uid="uid://c8ij1cub0j4l2" path="res://scenes/status_panel.tscn" id="7_xa7h4"]
 [ext_resource type="Texture2D" uid="uid://iie1hl08oqv1" path="res://assets/gdb-gamepad-2(all)/gdb-keyboard-2.png" id="8_yjbla"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gcv7i"]
@@ -2403,6 +2403,7 @@ one_shot = true
 script = ExtResource("6_f2rj6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 20
 
 [node name="StatusPanel" parent="CanvasLayer" instance=ExtResource("7_xa7h4")]
 offset_left = 12.0

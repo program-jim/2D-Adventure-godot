@@ -18,6 +18,8 @@ var world_states := {}
 
 const SAVE_PATH := "user://data.sav"
 
+@export var is_pretty_json : bool = false
+
 @onready var player_stats: Node = $PlayerStats
 @onready var color_rect: ColorRect = $ColorRect
 
@@ -83,21 +85,23 @@ func save_data() -> void:
 		},
 	}
 	
-	var json := JSON.stringify(data)
+	var json := JSON.stringify(data, "\t") if is_pretty_json else JSON.stringify(data)
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if not file:
+		print("fail to create file to write, PATH: " + str(SAVE_PATH))
 		return
 	file.store_string(json)
+	print("Success to save data into a file !!!")
 	
 	
 func load_data() -> void:
 	var file := FileAccess.open(SAVE_PATH, FileAccess.READ)
 	if not file:
+		print("fail to load file to read, PATH: " + str(SAVE_PATH))
 		return
 	
 	var json := file.get_as_text()
 	var data := JSON.parse_string(json) as Dictionary
-	
 	
 	change_scene(data.scene, {
 		direction = data.player.direction,
@@ -109,6 +113,8 @@ func load_data() -> void:
 			world_states = data.world_states
 			player_stats.from_dict(data.stats)
 	})
+	
+	print("Success to load data from a file !!!")
 	
 	
 func _unhandled_input(event: InputEvent) -> void:
