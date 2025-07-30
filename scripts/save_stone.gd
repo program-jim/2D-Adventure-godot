@@ -8,6 +8,7 @@
 #
 ####################
 
+
 extends Interactable
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer

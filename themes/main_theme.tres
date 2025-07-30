@@ -1,0 +1,26 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://d2e7813hdf36p"]
+
+[ext_resource type="FontFile" uid="uid://d3wx1d38r4yyt" path="res://assets/smiley-sans-v1.1.1/SmileySans-Oblique.otf" id="1_3651b"]
+[ext_resource type="Texture2D" uid="uid://dq0n8rodjw4wu" path="res://assets/Legacy-Fantasy - High Forest 2.3/HUD/HUD.png" id="1_dypdb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_44ps5"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r61xt"]
+texture = ExtResource("1_dypdb")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+region_rect = Rect2(94, 14, 20, 20)
+
+[resource]
+default_font = ExtResource("1_3651b")
+Button/styles/disabled = SubResource("StyleBoxEmpty_44ps5")
+Button/styles/focus = SubResource("StyleBoxTexture_r61xt")
+Button/styles/hover = SubResource("StyleBoxEmpty_44ps5")
+Button/styles/normal = SubResource("StyleBoxEmpty_44ps5")
+Button/styles/pressed = SubResource("StyleBoxEmpty_44ps5")
