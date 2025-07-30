@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://hx60ake4d7b0"]
+[gd_scene load_steps=3 format=3 uid="uid://hx60ake4d7b0"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_myq2f"]
 [ext_resource type="Script" path="res://scripts/class/stats.gd" id="2_k07ke"]
-[ext_resource type="Texture2D" uid="uid://cbku8plh14xb4" path="res://icon.svg" id="3_6mi44"]
 
 [node name="Game" type="CanvasLayer"]
 layer = 100
@@ -13,23 +12,10 @@ is_pretty_json = true
 script = ExtResource("2_k07ke")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
-
-[node name="Icon" type="TextureRect" parent="."]
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_6mi44")
