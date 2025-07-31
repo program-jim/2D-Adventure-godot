@@ -1,4 +1,4 @@
-# 2D-Adventure
+# 2D-Adventure-godot
 ## A 2D Video Game made with Godot
 
 ### About
