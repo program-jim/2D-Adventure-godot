@@ -1,3 +1,13 @@
+####################
+#
+#	File Name: title_screen.gd
+#	File Created Date: July 30 2025
+#	Language: GDScript
+#	File Description:
+#		The behavior of Title Screen control.
+#
+####################
+
 extends Control
 
 @onready var v: VBoxContainer = $V

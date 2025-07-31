@@ -4,7 +4,7 @@
 #	File Created Date: July 20 2025
 #	Language: GDScript
 #	File Description:
-#		
+#		Base class for all interactable objects for Player in the world.
 #
 ####################
 

@@ -1,3 +1,13 @@
+####################
+#
+#	File Name: status_panel.gd
+#	File Created Date: July 25 2025
+#	Language: GDScript
+#	File Description:
+#		The behavior of Player Status Panel.
+#
+####################
+
 extends HBoxContainer
 
 @export var stats : Stats

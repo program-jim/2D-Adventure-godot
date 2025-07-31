@@ -1,4 +1,68 @@
-[gd_scene format=3 uid="uid://bdtago84oxs50"]
+[gd_scene load_steps=6 format=3 uid="uid://bdtago84oxs50"]
+
+[ext_resource type="Script" path="res://scripts/game_over_screen.gd" id="1_ftjtl"]
+[ext_resource type="FontFile" uid="uid://d3wx1d38r4yyt" path="res://assets/smiley-sans-v1.1.1/SmileySans-Oblique.otf" id="1_s8h03"]
+
+[sub_resource type="Animation" id="Animation_v7q1l"]
+resource_name = "enter"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 0.4),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_avq4q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lx7kk"]
+_data = {
+"RESET": SubResource("Animation_avq4q"),
+"enter": SubResource("Animation_v7q1l")
+}
 
 [node name="GameOverScreen" type="Control"]
 layout_mode = 3
@@ -7,8 +71,40 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ftjtl")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.823529)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.825856, 0.146797, 0.146797, 1)
+theme_override_colors/font_shadow_color = Color(0.377804, 0.0597011, 0.0597011, 1)
+theme_override_fonts/font = ExtResource("1_s8h03")
+theme_override_font_sizes/font_size = 32
+text = "胜败乃兵家常事也
+大侠请重新来过吧"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_characters_behavior = 1
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lx7kk")
+}
