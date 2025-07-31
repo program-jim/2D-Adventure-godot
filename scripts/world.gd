@@ -8,6 +8,7 @@
 #
 ####################
 
+class_name World
 extends Node2D
 
 @onready var tile_map: TileMap = $TileMap
@@ -35,6 +36,12 @@ func _ready() -> void:
 	
 	camera_2d.reset_smoothing()
 	print("camera_2d.reset_smoothing()")
+	
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		Game.back_to_title()
+		print("data saved")
 	
 	
 func update_player(pos: Vector2, direction: Player.Direction) -> void:

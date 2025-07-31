@@ -19,6 +19,9 @@ region_rect = Rect2(94, 14, 20, 20)
 
 [resource]
 default_font = ExtResource("1_3651b")
+Button/colors/font_outline_color = Color(0, 0, 0.109804, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 0.705882)
+Button/constants/outline_size = 6
 Button/styles/disabled = SubResource("StyleBoxEmpty_44ps5")
 Button/styles/focus = SubResource("StyleBoxTexture_r61xt")
 Button/styles/hover = SubResource("StyleBoxEmpty_44ps5")
