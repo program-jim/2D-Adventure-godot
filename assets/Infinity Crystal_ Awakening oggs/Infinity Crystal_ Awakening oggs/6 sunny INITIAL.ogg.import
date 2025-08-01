@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://hnu3us372on0"
+path="res://.godot/imported/6 sunny INITIAL.ogg-b3c26557d1e2b944af734e24823c6a9a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Infinity Crystal_ Awakening oggs/Infinity Crystal_ Awakening oggs/6 sunny INITIAL.ogg"
+dest_files=["res://.godot/imported/6 sunny INITIAL.ogg-b3c26557d1e2b944af734e24823c6a9a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

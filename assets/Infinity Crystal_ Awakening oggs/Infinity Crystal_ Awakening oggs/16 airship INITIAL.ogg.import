@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://4g2qqx3gb8ib"
+path="res://.godot/imported/16 airship INITIAL.ogg-07b14ee9b70be86edffb921264c253f7.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Infinity Crystal_ Awakening oggs/Infinity Crystal_ Awakening oggs/16 airship INITIAL.ogg"
+dest_files=["res://.godot/imported/16 airship INITIAL.ogg-07b14ee9b70be86edffb921264c253f7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

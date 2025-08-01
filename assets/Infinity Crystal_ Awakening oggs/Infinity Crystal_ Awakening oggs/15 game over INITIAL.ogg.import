@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://difrn1vii7bio"
+path="res://.godot/imported/15 game over INITIAL.ogg-1a6ece30a65d15618cd039e7f62b4aae.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Infinity Crystal_ Awakening oggs/Infinity Crystal_ Awakening oggs/15 game over INITIAL.ogg"
+dest_files=["res://.godot/imported/15 game over INITIAL.ogg-1a6ece30a65d15618cd039e7f62b4aae.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

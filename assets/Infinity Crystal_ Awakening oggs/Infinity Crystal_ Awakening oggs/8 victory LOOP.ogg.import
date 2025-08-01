@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://clht65d0f4qle"
+path="res://.godot/imported/8 victory LOOP.ogg-67c792628f397a0a754f3b7f6f481a9d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Infinity Crystal_ Awakening oggs/Infinity Crystal_ Awakening oggs/8 victory LOOP.ogg"
+dest_files=["res://.godot/imported/8 victory LOOP.ogg-67c792628f397a0a754f3b7f6f481a9d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

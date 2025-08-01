@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dthdjrktsw6wf"
+path="res://.godot/imported/13 anxious LOOP.ogg-5470e71db576ceff542e79c6aa4e3e05.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Infinity Crystal_ Awakening oggs/Infinity Crystal_ Awakening oggs/13 anxious LOOP.ogg"
+dest_files=["res://.godot/imported/13 anxious LOOP.ogg-5470e71db576ceff542e79c6aa4e3e05.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

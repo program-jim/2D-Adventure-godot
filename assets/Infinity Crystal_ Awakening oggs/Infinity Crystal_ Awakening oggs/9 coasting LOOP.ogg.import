@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cnl7a6r10gh0q"
+path="res://.godot/imported/9 coasting LOOP.ogg-ca7d19cedb12d2cb7656fccf3ec971c0.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Infinity Crystal_ Awakening oggs/Infinity Crystal_ Awakening oggs/9 coasting LOOP.ogg"
+dest_files=["res://.godot/imported/9 coasting LOOP.ogg-ca7d19cedb12d2cb7656fccf3ec971c0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

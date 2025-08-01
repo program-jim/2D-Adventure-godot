@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b7v705lao2pf4"
+path="res://.godot/imported/20 largo.ogg-8c6281249d65a123e59cc0a9ef6642ae.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Infinity Crystal_ Awakening oggs/Infinity Crystal_ Awakening oggs/20 largo.ogg"
+dest_files=["res://.godot/imported/20 largo.ogg-8c6281249d65a123e59cc0a9ef6642ae.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

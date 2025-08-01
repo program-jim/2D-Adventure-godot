@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dtpchy64vckdd"
+path="res://.godot/imported/21 marching INITIAL.ogg-6e325ec2e3476848cd3aa800d3eb4248.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Infinity Crystal_ Awakening oggs/Infinity Crystal_ Awakening oggs/21 marching INITIAL.ogg"
+dest_files=["res://.godot/imported/21 marching INITIAL.ogg-6e325ec2e3476848cd3aa800d3eb4248.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

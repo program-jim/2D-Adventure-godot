@@ -2421,4 +2421,10 @@ sprite_frames = SubResource("SpriteFrames_7i8ur")
 autoplay = "default"
 frame_progress = 0.125054
 
+[node name="Audio" type="Node" parent="."]
+
+[node name="AttackAudio" type="AudioStreamPlayer" parent="Audio"]
+
+[node name="JumpAudio" type="AudioStreamPlayer" parent="Audio"]
+
 [connection signal="hurt" from="Graphics/Hurtbox" to="." method="_on_hurtbox_hurt"]
