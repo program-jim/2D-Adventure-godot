@@ -29,6 +29,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_jflrg")
-text = "TEXT"
+text = "Ending Page"
 horizontal_alignment = 1
 vertical_alignment = 1
