@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cu2nxoiqv7lvh"]
+[gd_scene load_steps=12 format=3 uid="uid://cu2nxoiqv7lvh"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_lj8kf"]
 [ext_resource type="TileSet" uid="uid://bl07q8du6fq3w" path="res://tiles/tiles.tres" id="2_d4gvn"]
 [ext_resource type="Texture2D" uid="uid://donx86vj426iw" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="2_kk7rc"]
+[ext_resource type="AudioStream" uid="uid://dopij7kdqs47w" path="res://assets/Infinity Crystal_ Awakening oggs/Infinity Crystal_ Awakening oggs/11 forest LOOP.ogg" id="2_xak0u"]
 [ext_resource type="PackedScene" uid="uid://buc7xf1fjjrbo" path="res://scenes/mine_gate.tscn" id="3_65km7"]
 [ext_resource type="Script" path="res://scripts/class/entry_point.gd" id="4_sdmpn"]
 [ext_resource type="PackedScene" uid="uid://7v84sq3ughq8" path="res://scenes/player.tscn" id="5_e0hny"]
@@ -13,6 +14,7 @@
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_lj8kf")
+bgm = ExtResource("2_xak0u")
 metadata/_edit_horizontal_guides_ = [-145.0, 159.0]
 
 [node name="TileMap" type="TileMap" parent="."]

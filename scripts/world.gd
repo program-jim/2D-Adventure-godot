@@ -11,6 +11,9 @@
 class_name World
 extends Node2D
 
+@export var bgm: AudioStream
+@export var is_bgm_play : bool = true
+
 @onready var tile_map: TileMap = $TileMap
 @onready var camera_2d: Camera2D = $Player/Camera2D
 @onready var player: CharacterBody2D = $Player
@@ -36,6 +39,9 @@ func _ready() -> void:
 	
 	camera_2d.reset_smoothing()
 	print("camera_2d.reset_smoothing()")
+
+	if bgm and is_bgm_play:
+		SoundManager.play_bgm(bgm)
 	
 
 func _unhandled_input(event: InputEvent) -> void:

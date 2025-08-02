@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/6 sunny LOOP.ogg-6ecdb3e6ea1f9c1bf7dd20abb63a
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

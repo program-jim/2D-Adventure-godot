@@ -10,6 +10,9 @@
 
 extends Control
 
+@export var bgm: AudioStream
+@export var is_bgm_play: bool = false
+
 @onready var v: VBoxContainer = $V
 @onready var new_game: Button = $V/NewGame
 @onready var load_game: Button = $V/LoadGame
@@ -21,10 +24,14 @@ func _ready() -> void:
 	for button: Button in v.get_children():
 		button.mouse_entered.connect(button.grab_focus)
 		
+	SoundManager.setup_ui_sounds_with_all_children(self)
+	if bgm and is_bgm_play:
+		SoundManager.play_bgm(bgm)
 
 
 func _on_new_game_pressed() -> void:
 	print("Starting New Game")
+	SoundManager.play_sfx("UIPress")
 	Game.new_game()
 
 

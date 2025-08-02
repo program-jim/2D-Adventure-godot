@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/12 heart LOOP.ogg-40ee97c84e252d01989dfcb5e27
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

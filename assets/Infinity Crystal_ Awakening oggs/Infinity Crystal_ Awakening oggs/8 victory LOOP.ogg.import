@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/8 victory LOOP.ogg-67c792628f397a0a754f3b7f6f
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

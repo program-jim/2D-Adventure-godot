@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/16 airship LOOP.ogg-a641ad911a7e5da90989954b0
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

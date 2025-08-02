@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3f3vtmvp7liw"]
+
+[ext_resource type="Script" path="res://scripts/sound_manager.gd" id="1_4ll7j"]
+[ext_resource type="AudioStream" uid="uid://dc2w70rhop5jk" path="res://assets/Minifantasy_Dungeon_SFX/07_human_atk_sword_1.wav" id="1_is56r"]
+[ext_resource type="AudioStream" uid="uid://c6gy4telgkm4k" path="res://assets/Minifantasy_Dungeon_SFX/12_human_jump_3.wav" id="2_hkycr"]
+[ext_resource type="AudioStream" uid="uid://ciy22owcpjg5r" path="res://assets/kenney_impact-sounds/Audio/impactTin_medium_004.ogg" id="4_06lxu"]
+[ext_resource type="AudioStream" uid="uid://dit4si5isq7vr" path="res://assets/kenney_impact-sounds/Audio/impactGlass_heavy_004.ogg" id="4_fn8ly"]
+[ext_resource type="AudioStream" uid="uid://bpuuie0cx6gwv" path="res://assets/kenney_impact-sounds/Audio/impactMining_001.ogg" id="6_6ku5i"]
+
+[node name="SoundManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_4ll7j")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Attack" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("1_is56r")
+bus = &"SFX"
+
+[node name="Jump" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("2_hkycr")
+bus = &"SFX"
+
+[node name="UIPress" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("4_fn8ly")
+bus = &"SFX"
+
+[node name="UIFocus" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("4_06lxu")
+bus = &"SFX"
+
+[node name="SaveStone" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("6_6ku5i")
+bus = &"SFX"
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"

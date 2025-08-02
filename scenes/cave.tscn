@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbefk6jo7n2sl"]
+[gd_scene load_steps=9 format=3 uid="uid://cbefk6jo7n2sl"]
 
 [ext_resource type="Script" path="res://scripts/cave.gd" id="1_3tbnu"]
+[ext_resource type="AudioStream" uid="uid://bgkvibnecpi5g" path="res://assets/Infinity Crystal_ Awakening oggs/Infinity Crystal_ Awakening oggs/14 BOSS y LOOP.ogg" id="2_c7u4f"]
 [ext_resource type="TileSet" uid="uid://bl07q8du6fq3w" path="res://tiles/tiles.tres" id="2_cghy3"]
 [ext_resource type="PackedScene" uid="uid://buc7xf1fjjrbo" path="res://scenes/mine_gate.tscn" id="3_3urm1"]
 [ext_resource type="Script" path="res://scripts/class/entry_point.gd" id="4_4ltdi"]
@@ -10,6 +11,7 @@
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_3tbnu")
+bgm = ExtResource("2_c7u4f")
 metadata/_edit_horizontal_guides_ = [-145.0, 159.0]
 
 [node name="TileMap" type="TileMap" parent="."]

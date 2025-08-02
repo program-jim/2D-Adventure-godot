@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://7v84sq3ughq8"]
+[gd_scene load_steps=38 format=3 uid="uid://7v84sq3ughq8"]
 
 [ext_resource type="Script" path="res://scripts/class/player.gd" id="1_kmwee"]
 [ext_resource type="Texture2D" uid="uid://54ckisw6w63r" path="res://assets/generic_char_v0.2/png/blue/char_blue_1.png" id="2_acg1a"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c8ij1cub0j4l2" path="res://scenes/status_panel.tscn" id="7_xa7h4"]
 [ext_resource type="PackedScene" uid="uid://bdtago84oxs50" path="res://scenes/game_over_screen.tscn" id="8_7jqm2"]
 [ext_resource type="Texture2D" uid="uid://iie1hl08oqv1" path="res://assets/gdb-gamepad-2(all)/gdb-keyboard-2.png" id="8_yjbla"]
+[ext_resource type="AudioStream" uid="uid://dc2w70rhop5jk" path="res://assets/Minifantasy_Dungeon_SFX/07_human_atk_sword_1.wav" id="10_uxdcv"]
+[ext_resource type="AudioStream" uid="uid://c6gy4telgkm4k" path="res://assets/Minifantasy_Dungeon_SFX/12_human_jump_3.wav" id="11_tvt6g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gcv7i"]
 size = Vector2(14, 28)
@@ -2424,7 +2426,9 @@ frame_progress = 0.125054
 [node name="Audio" type="Node" parent="."]
 
 [node name="AttackAudio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("10_uxdcv")
 
 [node name="JumpAudio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("11_tvt6g")
 
 [connection signal="hurt" from="Graphics/Hurtbox" to="." method="_on_hurtbox_hurt"]

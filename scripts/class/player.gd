@@ -79,6 +79,8 @@ var interacting_with : Array[Interactable]
 @onready var slide_request_timer: Timer = $SlideRequestTimer
 @onready var interaction_icon: AnimatedSprite2D = $InteractionIcon
 @onready var game_over_screen: Control = $CanvasLayer/GameOverScreen
+@onready var attack_audio: AudioStreamPlayer = $Audio/AttackAudio
+@onready var jump_audio: AudioStreamPlayer = $Audio/JumpAudio
 
 func _ready() -> void:
 	stand(default_gravity, 0.01)
@@ -348,6 +350,9 @@ func transition_state(from: State, to: State) -> void:
 			coyote_timer.stop()
 			jump_request_timer.stop()
 			
+			SoundManager.play_sfx("Jump")
+			#jump_audio.play()
+			
 		State.FALL:
 			animation_player.play("fall")
 			
@@ -371,6 +376,8 @@ func transition_state(from: State, to: State) -> void:
 		State.ATTACK_01:
 			animation_player.play("attack_01")
 			is_combo_requested = false
+			SoundManager.play_sfx("Attack")
+			#attack_audio.play()
 			
 		State.ATTACK_02:
 			animation_player.play("attack_02")
