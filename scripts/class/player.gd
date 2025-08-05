@@ -81,6 +81,7 @@ var interacting_with : Array[Interactable]
 @onready var game_over_screen: Control = $CanvasLayer/GameOverScreen
 @onready var attack_audio: AudioStreamPlayer = $Audio/AttackAudio
 @onready var jump_audio: AudioStreamPlayer = $Audio/JumpAudio
+@onready var pause_screen: Control = $CanvasLayer/PauseScreen
 
 func _ready() -> void:
 	stand(default_gravity, 0.01)
@@ -103,7 +104,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 	if event.is_action_pressed("interact") and interacting_with:
 		interacting_with.back().interact()
-		
+
+	if event.is_action_pressed("pause_game"):
+		pause_screen.show_pause()
+
 
 func tick_physics(state: State, delta: float) -> void:
 	interaction_icon.visible = not interacting_with.is_empty()
@@ -322,9 +326,9 @@ func get_next_state(state: State) -> int:
 		State.SLIDING_END:
 			if not animation_player.is_playing():
 				return State.IDLE
-	
+
 	return StateMachine.KEEP_CURRENT
-	
+
 
 func transition_state(from: State, to: State) -> void:
 	print("[%s] PLAYER_STATE: %s => %s" % [
@@ -335,84 +339,84 @@ func transition_state(from: State, to: State) -> void:
 	
 	if from not in GROUND_STATES and to in GROUND_STATES:
 		coyote_timer.stop()
-	
+
 	match to:
 		State.IDLE:
 			animation_player.play("idle")
 		
 		State.RUN:
 			animation_player.play("run")
-			
+
 		State.JUMP:
 			animation_player.play("jump")
 			
 			velocity.y = JUMP_VELOCITY
 			coyote_timer.stop()
 			jump_request_timer.stop()
-			
+
 			SoundManager.play_sfx("Jump")
 			#jump_audio.play()
-			
+
 		State.FALL:
 			animation_player.play("fall")
-			
+
 			if from in GROUND_STATES:
 				coyote_timer.start()
 			fall_from_y = global_position.y
 				
 		State.LANDING:
 			animation_player.play("landing")
-			
+
 		State.WALL_SLIDING:
 			animation_player.play("wall_sliding")
-			
+
 		State.WALL_JUMP:
 			animation_player.play("jump")
 			
 			velocity = WALL_JUMP_VELOCITY
 			velocity.x *= get_wall_normal().x
 			jump_request_timer.stop()
-			
+
 		State.ATTACK_01:
 			animation_player.play("attack_01")
 			is_combo_requested = false
 			SoundManager.play_sfx("Attack")
 			#attack_audio.play()
-			
+
 		State.ATTACK_02:
 			animation_player.play("attack_02")
 			is_combo_requested = false
-			
+
 		State.ATTACK_03:
 			animation_player.play("attack_03")
 			is_combo_requested = false
-			
+
 		State.HURT:
 			animation_player.play("hurt")
-			
+
 			stats.health -= pending_damage.amount
 			var dir := pending_damage.source.global_position.direction_to(global_position)
 			velocity = dir * KNOCKBACK_AMOUT
-			
+
 			pending_damage = null
 			invincible_timer.start()
-			
+
 		State.DIE:
 			animation_player.play("die")
 			invincible_timer.stop()
 			interacting_with.clear()
-			
+
 		State.SLIDING_START:
 			animation_player.play("sliding_start")
 			slide_request_timer.stop()
 			stats.energy -= SLIDING_ENERGY
-			
+
 		State.SLIDING_LOOP:
 			animation_player.play("sliding_loop")
-			
+
 		State.SLIDING_END:
 			animation_player.play("sliding_end")
-				
+
 	#if to == State.WALL_JUMP:
 		#Engine.time_scale = 0.3
 		#print("time slower.")

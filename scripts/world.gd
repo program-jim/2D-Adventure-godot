@@ -44,10 +44,10 @@ func _ready() -> void:
 		SoundManager.play_bgm(bgm)
 	
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		Game.back_to_title()
-		print("data saved")
+#func _unhandled_input(event: InputEvent) -> void:
+	#if event.is_action_pressed("ui_cancel"):
+		#Game.back_to_title()
+		#print("data saved")
 	
 	
 func update_player(pos: Vector2, direction: Player.Direction) -> void:
