@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://7v84sq3ughq8"]
+[gd_scene load_steps=56 format=3 uid="uid://7v84sq3ughq8"]
 
 [ext_resource type="Script" path="res://scripts/class/player.gd" id="1_kmwee"]
 [ext_resource type="Texture2D" uid="uid://54ckisw6w63r" path="res://assets/generic_char_v0.2/png/blue/char_blue_1.png" id="2_acg1a"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bdtago84oxs50" path="res://scenes/game_over_screen.tscn" id="8_7jqm2"]
 [ext_resource type="Texture2D" uid="uid://iie1hl08oqv1" path="res://assets/gdb-gamepad-2(all)/gdb-keyboard-2.png" id="8_yjbla"]
 [ext_resource type="PackedScene" uid="uid://x1n7oh6xee8e" path="res://scenes/pause_screen.tscn" id="9_g75i8"]
+[ext_resource type="PackedScene" uid="uid://dy21gao1xd36p" path="res://scenes/virtual_joypad.tscn" id="10_nj7rx"]
 [ext_resource type="AudioStream" uid="uid://dc2w70rhop5jk" path="res://assets/Minifantasy_Dungeon_SFX/07_human_atk_sword_1.wav" id="10_uxdcv"]
 [ext_resource type="Texture2D" uid="uid://bkk75lyqgocuy" path="res://assets/gdb-gamepad-2(all)/gdb-switch-2.png" id="11_j6iig"]
 [ext_resource type="AudioStream" uid="uid://c6gy4telgkm4k" path="res://assets/Minifantasy_Dungeon_SFX/12_human_jump_3.wav" id="11_tvt6g"]
@@ -2518,6 +2519,9 @@ offset_left = 12.0
 offset_top = 10.0
 offset_right = 100.0
 offset_bottom = 36.0
+
+[node name="VirtualJoypad" parent="CanvasLayer" instance=ExtResource("10_nj7rx")]
+modulate = Color(1, 1, 1, 0.470588)
 
 [node name="GameOverScreen" parent="CanvasLayer" instance=ExtResource("8_7jqm2")]
 
