@@ -393,6 +393,7 @@ func transition_state(from: State, to: State) -> void:
 
 		State.HURT:
 			animation_player.play("hurt")
+			Input.start_joy_vibration(0, 0, 1, 0.5)
 
 			stats.health -= pending_damage.amount
 			var dir := pending_damage.source.global_position.direction_to(global_position)
