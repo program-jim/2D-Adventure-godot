@@ -1,7 +1,15 @@
-[gd_scene format=3 uid="uid://bvxumu5qs1boe"]
+[gd_scene load_steps=4 format=3 uid="uid://bvxumu5qs1boe"]
+
+[ext_resource type="Theme" uid="uid://d2e7813hdf36p" path="res://themes/main_theme.tres" id="1_05kc0"]
+[ext_resource type="Script" path="res://scripts/volume_slider.gd" id="2_i36ka"]
+[ext_resource type="AudioStream" uid="uid://bgkvibnecpi5g" path="res://assets/Infinity Crystal_ Awakening oggs/Infinity Crystal_ Awakening oggs/14 BOSS y LOOP.ogg" id="3_i6crj"]
 
 [node name="VolumeSlider" type="HSlider"]
 offset_right = 276.0
 offset_bottom = 16.0
+theme = ExtResource("1_05kc0")
 max_value = 1.0
 step = 0.1
+value = 0.5
+script = ExtResource("2_i36ka")
+test_bgm = ExtResource("3_i6crj")
