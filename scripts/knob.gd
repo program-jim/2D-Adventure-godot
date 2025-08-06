@@ -1,6 +1,9 @@
 extends TouchScreenButton
 
+const DRAG_RADIUS := 16.0
+
 var finger_index := -1
+var drag_offset: Vector2
 
 @onready var rest_pos := global_position
 
@@ -16,6 +19,7 @@ func _input(event: InputEvent) -> void:
 			if rect.has_point(local_pos):
 				# Press down
 				finger_index = st.index
+				drag_offset = global_pos - global_position
 		elif not st.pressed and st.index == finger_index:
 			# Press released
 			finger_index = -1
@@ -24,5 +28,8 @@ func _input(event: InputEvent) -> void:
 	var sd := event as InputEventScreenDrag
 	if sd and sd.index == finger_index:
 		# Drag
-		global_position = sd.position * get_canvas_transform()
+		var wish_pos := sd.position * get_canvas_transform() - drag_offset
+		var movement := (wish_pos - rest_pos).limit_length(DRAG_RADIUS)
+		global_position = rest_pos + movement
+		
 		
