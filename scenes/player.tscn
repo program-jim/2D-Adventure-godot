@@ -2542,3 +2542,4 @@ stream = ExtResource("10_uxdcv")
 stream = ExtResource("11_tvt6g")
 
 [connection signal="hurt" from="Graphics/Hurtbox" to="." method="_on_hurtbox_hurt"]
+[connection signal="hit" from="Graphics/Hitbox" to="." method="_on_hitbox_hit"]

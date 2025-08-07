@@ -10,6 +10,8 @@
 
 extends CanvasLayer
 
+signal camera_shake(amount: float)
+
 # Mind Map of world_states
 # scene_name => {
 #	enemies_alive => [enemies_path]
@@ -194,3 +196,10 @@ func load_settings_data() -> void:
 	)
 
 	print("Success to load settings data.")
+
+
+func shake_camera(amount: float) -> void:
+	camera_shake.emit(amount)
+	Engine.time_scale = 0.01
+	await get_tree().create_timer(0.05, true, false, true).timeout
+	Engine.time_scale = 1

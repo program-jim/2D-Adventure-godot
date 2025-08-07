@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cu2nxoiqv7lvh"]
+[gd_scene load_steps=13 format=3 uid="uid://cu2nxoiqv7lvh"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_lj8kf"]
 [ext_resource type="TileSet" uid="uid://bl07q8du6fq3w" path="res://tiles/tiles.tres" id="2_d4gvn"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cf5ovaipwh3ay" path="res://assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="6_8ttf4"]
 [ext_resource type="Texture2D" uid="uid://dy4lspade7mpm" path="res://assets/Legacy-Fantasy - High Forest 2.3/Trees/Background.png" id="7_6nccx"]
 [ext_resource type="PackedScene" uid="uid://dbugji2fynbsb" path="res://scenes/boar.tscn" id="8_1qcix"]
+[ext_resource type="Script" path="res://scripts/shaky_camera.gd" id="8_hsfdu"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_lj8kf")
@@ -55,11 +56,14 @@ position = Vector2(166, 124)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -14)
+process_callback = 0
 limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_drag_margin = true
+script = ExtResource("8_hsfdu")
+strength = 4.0
 
 [node name="Decorations" type="Node2D" parent="."]
 metadata/_edit_lock_ = true

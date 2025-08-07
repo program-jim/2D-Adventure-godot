@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbefk6jo7n2sl"]
+[gd_scene load_steps=10 format=3 uid="uid://cbefk6jo7n2sl"]
 
 [ext_resource type="Script" path="res://scripts/cave.gd" id="1_3tbnu"]
 [ext_resource type="AudioStream" uid="uid://bgkvibnecpi5g" path="res://assets/Infinity Crystal_ Awakening oggs/Infinity Crystal_ Awakening oggs/14 BOSS y LOOP.ogg" id="2_c7u4f"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://7v84sq3ughq8" path="res://scenes/player.tscn" id="5_4mkw0"]
 [ext_resource type="PackedScene" uid="uid://k2rrpy84oeny" path="res://scenes/save_stone.tscn" id="5_7045t"]
 [ext_resource type="PackedScene" uid="uid://dbugji2fynbsb" path="res://scenes/boar.tscn" id="7_v2d02"]
+[ext_resource type="Script" path="res://scripts/shaky_camera.gd" id="8_4dg5j"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_3tbnu")
@@ -41,11 +42,13 @@ position = Vector2(127, 418)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -14)
+process_callback = 0
 limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_drag_margin = true
+script = ExtResource("8_4dg5j")
 
 [node name="Decorations" type="Node2D" parent="."]
 metadata/_edit_group_ = true

@@ -5,6 +5,8 @@ const MOUSE_DEAD_ZONE := 16.0
 
 
 func _ready() -> void:
+	DisplayServer.is_touchscreen_available()
+	
 	if Input.get_connected_joypads():
 		show_joypad_icon(0)
 	else:

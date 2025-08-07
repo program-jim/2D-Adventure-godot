@@ -58,6 +58,7 @@ var interacting_with : Array[Interactable]
 
 #@export var is_coyote_global: bool = false
 @export var original_pos := Vector2(142, 82)
+@export var camera_shake_amount := 4.0
 @export var can_combo := false
 @export var alpha_lose := 50
 @export var direction := Direction.RIGHT:
@@ -393,6 +394,7 @@ func transition_state(from: State, to: State) -> void:
 
 		State.HURT:
 			animation_player.play("hurt")
+			Game.shake_camera(camera_shake_amount)
 			Input.start_joy_vibration(0, 0, 1, 0.5)
 
 			stats.health -= pending_damage.amount
@@ -441,3 +443,7 @@ func _on_hurtbox_hurt(hitbox) -> void:
 	pending_damage.amount = 1
 	pending_damage.source = hitbox.owner
 	
+
+
+func _on_hitbox_hit(hurtbox: Variant) -> void:
+	Game.shake_camera(2)
