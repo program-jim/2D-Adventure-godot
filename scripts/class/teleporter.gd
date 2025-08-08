@@ -15,5 +15,6 @@ extends Interactable
 @export var entry_point: String
 
 func interact() -> void:
-	super()
-	Game.change_scene(path, {entry_point = entry_point})
+	if entry_point:
+		super()
+		Game.change_scene(path, {"entry_point" = entry_point})

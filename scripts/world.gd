@@ -60,18 +60,20 @@ func update_player(pos: Vector2, direction: Player.Direction) -> void:
 
 func to_dict() -> Dictionary:
 	var enemies_alive := []
-	for node in get_tree().get_nodes_in_group("enemies"):
+	for node in get_tree().get_nodes_in_group(Game.ENEMIES_TAG):
 		var path := get_path_to(node) as String
 		enemies_alive.append(path)
+		print("ENEMY PATH: " + path)
 	
 	return {
-		enemies_alive = enemies_alive,
+		"enemies_alive" = enemies_alive,
 	}
 
 
 func from_dict(dict: Dictionary) -> void:
-	for node in get_tree().get_nodes_in_group("enemies"):
+	for node in get_tree().get_nodes_in_group(Game.ENEMIES_TAG):
 		var path := get_path_to(node) as String
-		if node not in dict.enemies_alive:
-			node.queue_free()
+		#if node not in dict["enemies_alive"]:
+			#print(str(node))
+			#node.queue_free()
 

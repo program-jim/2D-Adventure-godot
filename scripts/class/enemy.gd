@@ -16,7 +16,7 @@ enum Direction{
 	RIGHT = 1
 }
 
-signal died
+signal died(id_go: String)
 
 @export var direction := Direction.LEFT:
 	set(v):
@@ -26,6 +26,7 @@ signal died
 		graphics.scale.x = -direction
 @export var max_speed : float = 180.0
 @export var acceleration : float = 2000.0
+@export var id: String
 
 var default_gravity := ProjectSettings.get("physics/2d/default_gravity") as float
 
@@ -34,8 +35,8 @@ var default_gravity := ProjectSettings.get("physics/2d/default_gravity") as floa
 @onready var state_machine: Node = $StateMachine
 @onready var stats: Node = $Stats
 
-#func _ready() -> void:
-#	add_to_group("enemies")	
+func _ready() -> void:
+	add_to_group(Game.ENEMIES_TAG)	
 
 func move(speed: float, delta: float) -> void:
 	velocity.x = move_toward(velocity.x, speed * direction, acceleration * delta)
@@ -45,5 +46,5 @@ func move(speed: float, delta: float) -> void:
 	
 	
 func die() -> void:
-	died.emit()
+	died.emit(id)
 	queue_free()

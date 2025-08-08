@@ -37,7 +37,6 @@ entry_point = "BottomGate-Entry"
 position = Vector2(62, 79)
 scale = Vector2(-1, 1)
 path = "res://scenes/forest.tscn"
-entry_point = "TopEntry"
 
 [node name="BottomEntry" type="Marker2D" parent="TileMap"]
 position = Vector2(130, 125)
@@ -165,8 +164,12 @@ texture = ExtResource("2_kk7rc")
 region_enabled = true
 region_rect = Rect2(210, 293, 124, 86)
 
-[node name="Boar" parent="." instance=ExtResource("8_1qcix")]
+[node name="Boar" parent="." groups=["enemies"] instance=ExtResource("8_1qcix")]
 position = Vector2(586, 126)
+id = "9C38E3BE-EB08-FAD1-E730-0C26E6886239"
 
-[node name="Boar2" parent="." instance=ExtResource("8_1qcix")]
+[node name="Boar2" parent="." groups=["enemies"] instance=ExtResource("8_1qcix")]
 position = Vector2(518, 14)
+id = "E5230996-B8A3-1818-DD91-78A133AEB87E"
+
+[node name="Enemies" type="Node" parent="."]

@@ -20,6 +20,7 @@ var world_states := {}
 
 const PLAYER_DATA_PATH := "user://player_data.sav"
 const SETTINGS_DATA_PATH := "user://settings_data.ini"
+const ENEMIES_TAG := "enemies"
 
 @export var is_pretty_json : bool = false
 
@@ -45,7 +46,7 @@ func load_game() -> void:
 	load_data()
 
 
-func change_scene(path: String, params := {}) -> void:
+func change_scene(path: String, params: Dictionary = {}) -> void:
 	var duration := params.get("duration", 0.2) as float
 	
 	var tree := get_tree()
@@ -58,11 +59,13 @@ func change_scene(path: String, params := {}) -> void:
 	
 	if tree.current_scene is World:
 		var old_name := tree.current_scene.scene_file_path.get_file().get_basename()
+		print("OLD NAME: " + str(old_name))
 		world_states[old_name] = tree.current_scene.to_dict()
+		print("Save old_name data")
 	
 	tree.change_scene_to_file(path)
 	
-	if "init" in params:
+	if params.has("init"):
 		params.init.call()
 	
 	#await tree.process_frame # before ENGINE VER 4.2
@@ -71,10 +74,13 @@ func change_scene(path: String, params := {}) -> void:
 	
 	if tree.current_scene is World:
 		var new_name := tree.current_scene.scene_file_path.get_file().get_basename()
+		print("NEW NAME: " + new_name)
 		if new_name in world_states:
 			tree.current_scene.from_dict(world_states[new_name])
-
+		
 		if "entry_point" in params:
+			print("ENTRY_POINT")
+
 			for node in tree.get_nodes_in_group("entry_points"):
 				if node.name == params.entry_point:
 					tree.current_scene.update_player(node.global_position, node.direction)
@@ -105,15 +111,15 @@ func save_data() -> void:
 	world_states[scene_name] = scene.to_dict()
 		
 	var data := {
-		world_states = world_states,
-		stats = player_stats.to_dict(),
-		scene = scene.scene_file_path,
-		player = {
-			direction = scene.player.direction,
-			position = 
+		"world_states" = world_states,
+		"stats" = player_stats.to_dict(),
+		"scene" = scene.scene_file_path,
+		"player" = {
+			"direction" = scene.player.direction,
+			"position" = 
 			{
-				x = scene.player.global_position.x,
-				y = scene.player.global_position.y,
+				"x" = scene.player.global_position.x,
+				"y" = scene.player.global_position.y,
 			},
 		},
 	}
@@ -138,16 +144,18 @@ func load_data() -> void:
 	var json := file.get_as_text()
 	var data := JSON.parse_string(json) as Dictionary
 	
-	change_scene(data.scene, {
-		direction = data.player.direction,
-		position = Vector2(
+	var scene_params := {
+		"direction" = data.player.direction,
+		"position" = Vector2(
 			data.player.position.x,
 			data.player.position.y,
 		),
-		init = func ():
+		"init" = func ():
 			world_states = data.world_states
 			player_stats.from_dict(data.stats)
-	})
+	}
+	
+	change_scene(data["scene"], scene_params)
 	
 	file.close()
 	print("Success to load data from a file !!!")

@@ -10,7 +10,9 @@ config_version=5
 
 [application]
 
-config/name="WarriorsLegend"
+config/name="Warriors Legend"
+config/description="A 2D Video Game made with Godot."
+config/version="1.0 Alpha"
 run/main_scene="res://scenes/title_screen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
@@ -25,10 +27,11 @@ SoundManager="*res://scenes/sound_manager.tscn"
 
 window/size/viewport_width=384
 window/size/viewport_height=216
-window/size/always_on_top=true
 window/size/window_width_override=1152
 window/size/window_height_override=648
 window/stretch/mode="canvas_items"
+window/handheld/orientation=4
+window/size/always_on_top.editor=false
 
 [input]
 
